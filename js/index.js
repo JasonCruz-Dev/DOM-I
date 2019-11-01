@@ -97,13 +97,19 @@ sectionContent[4].textContent = siteContent['main-content']['vision-content']
 
 // Contact - contact
 
+const contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = siteContent.contact["contact-h4"];
 
-
-
+const contactContent = document.querySelectorAll(".contact p");
+siteContent.contact["address"] = "123 Way 456 Street </br> Somewhere, USA";
+contactContent[0].innerHTML = siteContent.contact["address"];
+contactContent[1].textContent = siteContent.contact["phone"];
+contactContent[2].textContent = siteContent.contact["email"];
 
 // Footer - footer
 
-
+const footer = document.querySelector('footer p');
+footer.textContent = siteContent.footer['copyright'];
 
 // Example: Update the img src for the logo
 // let logo = document.getElementById("logo-img");
