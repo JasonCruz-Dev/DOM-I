@@ -41,18 +41,30 @@ const siteContent = {
 // Navigation - nav
 
 let nav = document.querySelectorAll('nav a');
-nav[0].innerHTML = siteContent.nav['nav-items-1'];
-nav[1].innerHTML = siteContent.nav['nav-items-2'];
-nav[2].innerHTML = siteContent.nav['nav-items-3'];
-nav[3].innerHTML = siteContent.nav['nav-items-4'];
-nav[4].innerHTML = siteContent.nav['nav-items-5'];
-nav[5].innerHTML = siteContent.nav['nav-items-6'];
-nav.forEach(link.style.color = 'green');
-
+nav[0].textContent = siteContent.nav['nav-item-1'];
+nav[1].textContent = siteContent.nav['nav-item-2'];
+nav[2].textContent = siteContent.nav['nav-item-3'];
+nav[3].textContent = siteContent.nav['nav-item-4'];
+nav[4].textContent = siteContent.nav['nav-item-5'];
+nav[5].textContent = siteContent.nav['nav-item-6'];
+nav.forEach(link => link.style.color = 'green');
 
 // Logo - logo
 
+let logo = document.getElementById('logo-img');
+logo.setAttribute('src', siteContent['nav']['img-src'])
 
+const newNav = document.querySelector('nav');
+
+const newElementOne = document.createElement('a');
+newElementOne.textContent = 'Home';
+newElementOne.href = '#';
+newElementOne.style.color = 'green';
+
+const newElementTwo = document.createElement('a');
+newElementTwo.textContent = 'Blog';
+newElementTwo.href = '#';
+newElementTwo.style.color = 'green';
 
 // Button - cta
 
@@ -77,5 +89,5 @@ nav.forEach(link.style.color = 'green');
 // let logo = document.getElementById("logo-img");
 // logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-const multipleSelections = document.querySelectorAll('a');
-console.log(multipleSelections)
+// const multipleSelections = document.querySelectorAll('a');
+// console.log(multipleSelections)
