@@ -6,6 +6,8 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
+    "nav-item-7": "Home",
+    "nav-item-8": "Search",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -47,7 +49,11 @@ nav[2].textContent = siteContent.nav['nav-item-3'];
 nav[3].textContent = siteContent.nav['nav-item-4'];
 nav[4].textContent = siteContent.nav['nav-item-5'];
 nav[5].textContent = siteContent.nav['nav-item-6'];
-nav.forEach(link => link.style.color = 'green');
+nav.forEach(link => link.style.color = '#03c02f');
+
+// const appendNav = document.querySelector('nav a');
+let subHeadline = document.createElement;
+subHeadline.textContent = 'Search';
 
 // Logo - logo
 
@@ -55,16 +61,18 @@ let logo = document.getElementById('logo-img');
 logo.setAttribute('src', siteContent['nav']['img-src'])
 
 const newNav = document.querySelector('nav');
-
 const newElementOne = document.createElement('a');
 newElementOne.textContent = 'Home';
 newElementOne.href = '#';
-newElementOne.style.color = 'green';
+newElementOne.style.color = '#03c02f';
 
 const newElementTwo = document.createElement('a');
 newElementTwo.textContent = 'Blog';
 newElementTwo.href = '#';
-newElementTwo.style.color = 'green';
+newElementTwo.style.color = '#03c02f';
+
+newNav.appendChild(newElementTwo);
+newNav.prepend(newElementOne);
 
 // Button - cta
 
@@ -72,7 +80,20 @@ let ctaImg = document.querySelector('#cta-img');
 ctaImg.src = siteContent["cta"]['img-src'];
 
 const ctaText = document.querySelector('.cta-text h1');
-ctaText.innerHTML = siteContent['cta']['h1'].replace(/\s/g, '<br />');
+ctaText.textContent = siteContent['cta']['h1']
+// ctaText.style.width = '90%';
+// ctaText.style.display = 'flex';
+// ctaText.style.flexWrap = 'wrap';
+// ctaText.justifyContent = 'center';
+
+
+// .replace(/\s/g, '<br />');
+
+
+
+
+
+
 
 const ctaBtn = document.querySelector('.cta-text button');
 ctaBtn.textContent = siteContent.cta['button'];
