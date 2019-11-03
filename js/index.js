@@ -41,7 +41,6 @@ const siteContent = {
 
 
 // Navigation - nav
-
 let nav = document.querySelectorAll('nav a');
 nav[0].textContent = siteContent.nav['nav-item-1'];
 nav[1].textContent = siteContent.nav['nav-item-2'];
@@ -51,12 +50,7 @@ nav[4].textContent = siteContent.nav['nav-item-5'];
 nav[5].textContent = siteContent.nav['nav-item-6'];
 nav.forEach(link => link.style.color = '#03c02f');
 
-// const appendNav = document.querySelector('nav a');
-let subHeadline = document.createElement;
-subHeadline.textContent = 'Search';
-
 // Logo - logo
-
 let logo = document.getElementById('logo-img');
 logo.setAttribute('src', siteContent['nav']['img-src'])
 
@@ -75,30 +69,23 @@ newNav.appendChild(newElementTwo);
 newNav.prepend(newElementOne);
 
 // Button - cta
-
 let ctaImg = document.querySelector('#cta-img');
 ctaImg.src = siteContent["cta"]['img-src'];
 
 const ctaText = document.querySelector('.cta-text h1');
 ctaText.textContent = siteContent['cta']['h1']
-// ctaText.style.width = '90%';
-// ctaText.style.display = 'flex';
-// ctaText.style.flexWrap = 'wrap';
-// ctaText.justifyContent = 'center';
-
-
-// .replace(/\s/g, '<br />');
-
-
-
-
-
-
 
 const ctaBtn = document.querySelector('.cta-text button');
 ctaBtn.textContent = siteContent.cta['button'];
-// Main-Content - // main-content
+ctaBtn.addEventListener('dblclick', (event) => {
+  event.target.style.background = '#03c02f';
+});
+ctaBtn.addEventListener('mouseleave', (event) => {
+  event.target.style.background = ''
+  event.target.style.transition = '5.0s'
+});
 
+// Main-Content - // main-content
 const middleImg = document.querySelector('#middle-img');
 middleImg.src = siteContent['main-content']['middle-img-src'];
 
@@ -117,18 +104,16 @@ sectionContent[3].textContent = siteContent['main-content']['product-content']
 sectionContent[4].textContent = siteContent['main-content']['vision-content']
 
 // Contact - contact
-
 const contactHeader = document.querySelector(".contact h4");
 contactHeader.textContent = siteContent.contact["contact-h4"];
 
 const contactContent = document.querySelectorAll(".contact p");
-siteContent.contact["address"] = "123 Way 456 Street </br> Somewhere, USA";
-contactContent[0].innerHTML = siteContent.contact["address"];
+// siteContent.contact["address"] = "123 Way 456 Street Somewhere, USA";
+contactContent[0].textContent = siteContent.contact["address"];
 contactContent[1].textContent = siteContent.contact["phone"];
 contactContent[2].textContent = siteContent.contact["email"];
 
 // Footer - footer
-
 const footer = document.querySelector('footer p');
 footer.textContent = siteContent.footer['copyright'];
 
