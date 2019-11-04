@@ -6,6 +6,8 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
+    "nav-item-7": "Home",
+    "nav-item-8": "Search",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -14,29 +16,110 @@ const siteContent = {
     "img-src": "img/header-img.png"
   },
   "main-content": {
-    "features-h4":"Features",
+    "features-h4": "Features",
     "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "about-h4":"About",
+    "about-h4": "About",
     "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "middle-img-src": "img/mid-page-accent.jpg",
-    "services-h4":"Services",
+    "services-h4": "Services",
     "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "product-h4":"Product",
+    "product-h4": "Product",
     "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "vision-h4":"Vision",
+    "vision-h4": "Vision",
     "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
   },
   "contact": {
-    "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
-    "phone" : "1 (888) 888-8888",
-    "email" : "sales@greatidea.io",
+    "contact-h4": "Contact",
+    "address": "123 Way 456 Street Somewhere, USA",
+    "phone": "1 (888) 888-8888",
+    "email": "sales@greatidea.io",
   },
   "footer": {
-    "copyright" : "Copyright Great Idea! 2018"
+    "copyright": "Copyright Great Idea! 2018"
   },
 };
 
+
+// Navigation - nav
+let nav = document.querySelectorAll('nav a');
+nav[0].textContent = siteContent.nav['nav-item-1'];
+nav[1].textContent = siteContent.nav['nav-item-2'];
+nav[2].textContent = siteContent.nav['nav-item-3'];
+nav[3].textContent = siteContent.nav['nav-item-4'];
+nav[4].textContent = siteContent.nav['nav-item-5'];
+nav[5].textContent = siteContent.nav['nav-item-6'];
+nav.forEach(link => link.style.color = '#03c02f');
+
+// Logo - logo
+let logo = document.getElementById('logo-img');
+logo.setAttribute('src', siteContent['nav']['img-src'])
+
+const newNav = document.querySelector('nav');
+const newElementOne = document.createElement('a');
+newElementOne.textContent = 'Home';
+newElementOne.href = '#';
+newElementOne.style.color = '#03c02f';
+
+const newElementTwo = document.createElement('a');
+newElementTwo.textContent = 'Blog';
+newElementTwo.href = '#';
+newElementTwo.style.color = '#03c02f';
+
+newNav.appendChild(newElementTwo);
+newNav.prepend(newElementOne);
+
+// Button - cta
+let ctaImg = document.querySelector('#cta-img');
+ctaImg.src = siteContent["cta"]['img-src'];
+
+const ctaText = document.querySelector('.cta-text h1');
+ctaText.textContent = siteContent['cta']['h1']
+
+const ctaBtn = document.querySelector('.cta-text button');
+ctaBtn.textContent = siteContent.cta['button'];
+ctaBtn.addEventListener('dblclick', (event) => {
+  event.target.style.background = '#03c02f';
+});
+ctaBtn.addEventListener('mouseleave', (event) => {
+  event.target.style.background = ''
+  event.target.style.transition = '5.0s'
+});
+
+// Main-Content - // main-content
+const middleImg = document.querySelector('#middle-img');
+middleImg.src = siteContent['main-content']['middle-img-src'];
+
+const sectionHeaders = document.querySelectorAll('.main-content h4');
+sectionHeaders[0].textContent = siteContent['main-content']['features-h4']
+sectionHeaders[1].textContent = siteContent['main-content']['about-h4']
+sectionHeaders[2].textContent = siteContent['main-content']['services-h4']
+sectionHeaders[3].textContent = siteContent['main-content']['product-h4']
+sectionHeaders[4].textContent = siteContent['main-content']['vision-h4']
+
+const sectionContent = document.querySelectorAll('.main-content p');
+sectionContent[0].textContent = siteContent['main-content']['features-content']
+sectionContent[1].textContent = siteContent['main-content']['about-content']
+sectionContent[2].textContent = siteContent['main-content']['services-content']
+sectionContent[3].textContent = siteContent['main-content']['product-content']
+sectionContent[4].textContent = siteContent['main-content']['vision-content']
+
+// Contact - contact
+const contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = siteContent.contact["contact-h4"];
+
+const contactContent = document.querySelectorAll(".contact p");
+// siteContent.contact["address"] = "123 Way 456 Street Somewhere, USA";
+contactContent[0].textContent = siteContent.contact["address"];
+contactContent[1].textContent = siteContent.contact["phone"];
+contactContent[2].textContent = siteContent.contact["email"];
+
+// Footer - footer
+const footer = document.querySelector('footer p');
+footer.textContent = siteContent.footer['copyright'];
+
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+// let logo = document.getElementById("logo-img");
+// logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// const multipleSelections = document.querySelectorAll('a');
+// console.log(multipleSelections)
